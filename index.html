@@ -7,7 +7,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Prabhav Upadhyay · Aerosol optics, instrumentation and satellite re-entry aerosols">
 <meta property="og:description" content="Prabhav Upadhyay, WashU PhD candidate in aerosol optics and photoacoustic instruments, seeking postdoctoral positions from Summer 2027.">
-<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://pupadhyay-web.github.io/Personal-website/">
+<meta property="og:url" content="https://pupadhyay-web.github.io/Personal-website/">
+<meta property="og:image" content="https://pupadhyay-web.github.io/Personal-website/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prabhav Upadhyay, PhD candidate in aerosol science, seeking postdoctoral positions from Summer 2027">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prabhav Upadhyay · Aerosol scientist</title>
 
@@ -177,7 +183,7 @@ sub,sup{font-size:.68em;line-height:0}
 .atmos__intro .section-lede b.why{color:#F7D68A}
 .scroll-hint{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-space-muted)}
 .boundary{position:relative;padding-block:26px 22px;--b-ink:var(--on-space);--b-line:var(--space-line)}
-.boundary::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1.5px dashed var(--b-line)}
+.boundary::before{content:"";position:absolute;left:0;right:0;top:calc(26px + .9rem);border-top:1.5px dashed var(--b-line)}
 .boundary .wrap{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 12px}
 .boundary span{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--b-ink);background:var(--b-bg,var(--atm-1));padding:.35em .7em;border-radius:6px;border:1px solid var(--b-line)}
 .boundary--karman{--b-bg:var(--atm-0)}
@@ -187,20 +193,21 @@ sub,sup{font-size:.68em;line-height:0}
 .stack{display:grid;gap:clamp(28px,4vw,48px)}
 
 /* ---------- project panels (poster panels) ---------- */
-.quip{display:block;order:99;justify-self:start;max-width:min(420px,88%);margin:2px 0 0;padding:10px 12px;font-family:var(--mono);font-size:.74rem;line-height:1.5;color:#C9D2EE;background:rgba(7,11,29,.55);border:1px dashed rgba(169,180,217,.45);border-radius:10px;transform:rotate(-1deg)}
-.quip::before{content:"aside";display:block;margin-bottom:4px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#F7D68A}
-.quip--r{justify-self:end;transform:rotate(1deg)}
-.boundary .quip{flex:1 1 100%;margin-top:8px}
-.boundary .quip--r{margin-left:auto}
+.quips{order:99;display:flex;flex-wrap:wrap;gap:8px 10px}
+.quip{display:block;flex:1 1 240px;max-width:440px;margin:0;padding:6px 10px;font-family:var(--mono);font-size:.68rem;line-height:1.45;color:#C9D2EE;background:rgba(7,11,29,.55);border:1px dashed rgba(169,180,217,.4);border-radius:8px}
+.quip::before{content:"aside · ";font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#F7D68A}
+.boundary .wrap{align-items:center}
+.boundary .quips{flex:1 1 100%;margin-top:4px}
 @media (min-width:1440px){
   .project{position:relative}
-  .quip{position:absolute;z-index:3;order:0;justify-self:auto;max-width:none;margin:0;top:var(--qt,40px);right:calc(100% + 14px);width:min(176px,calc((100vw - 1220px) / 2 + 18px));font-size:.72rem;background:rgba(14,21,49,.78);transform:rotate(-1.8deg);pointer-events:none}
-  .boundary .quip{flex:none;margin:0}
-  .quip--r{transform:rotate(1.6deg);top:var(--qt2,var(--qt,40px))}
+  .quips{display:contents}
+  .quip{position:absolute;z-index:3;top:var(--qt,40px);right:calc(100% + 14px);width:min(170px,calc((100vw - 1220px) / 2 + 18px));max-width:none;padding:8px 10px;font-size:.68rem;background:rgba(14,21,49,.8);transform:rotate(-1.5deg);pointer-events:none}
+  .quip--r{transform:rotate(1.3deg);top:var(--qt2,var(--qt,40px))}
 }
 @media (min-width:1680px){
   .quip--r{right:auto;left:calc(100% + 14px);top:var(--qt,40px);width:min(150px,calc((100vw - 1220px) / 2 - 94px))}
 }
+
 
 .project{display:grid;gap:clamp(16px,2.2vw,26px);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(18px,3vw,36px)}
 .project__head{display:grid;gap:12px}
@@ -620,8 +627,7 @@ a.tag:hover{border-color:var(--sky)}
   <div class="layer layer--meso">
     <div class="wrap">
       <article class="project project--wide" id="reentry" data-km="68">
-        <aside class="quip" style="--qt:4%" aria-hidden="true">What do you call a satellite that burns up on re-entry? A shooting star with a résumé.</aside>
-        <aside class="quip quip--r" style="--qt:46%" aria-hidden="true">Aluminum walks into a bar of oxygen and leaves with a shell.</aside>
+        <div class="quips"><aside class="quip" style="--qt:4%" aria-hidden="true">What do you call a satellite that burns up on re-entry? A shooting star with a résumé.</aside><aside class="quip quip--r" style="--qt:46%" aria-hidden="true">Aluminum walks into a bar of oxygen and leaves with a shell.</aside></div>
         <div class="project__head">
           <div class="tags"><span class="tag tag--alt">Mesosphere · 50–85 km · Re-entry</span><span class="tag tag--live">Current work · manuscript in prep.</span></div>
           <h3>Do re-entering satellites really emit pure alumina, and how does it affect stratospheric warming and ozone?</h3>
@@ -739,13 +745,13 @@ a.tag:hover{border-color:var(--sky)}
     </div>
   </div>
 
-  <div class="boundary boundary--strato" data-km="50"><div class="wrap"><aside class="quip" style="--qt:-34px" aria-hidden="true">I’d tell you an aerosol joke, but it would just float over your head.</aside><aside class="quip quip--r" style="--qt:-34px; --qt2:96px" aria-hidden="true">Why did the photon skip the checked bag? It was traveling light.</aside><span>Stratopause · 50 km</span><span>Stratosphere</span></div></div>
+  <div class="boundary boundary--strato" data-km="50"><div class="wrap"><div class="quips"><aside class="quip" style="--qt:-34px" aria-hidden="true">I’d tell you an aerosol joke, but it would just float over your head.</aside><aside class="quip quip--r" style="--qt:-34px; --qt2:96px" aria-hidden="true">Why did the photon skip the checked bag? It was traveling light.</aside></div><span>Stratopause · 50 km</span><span>Stratosphere</span></div></div>
 
   <!-- STRATOSPHERE -->
   <div class="layer layer--strato">
     <div class="wrap">
       <article class="project project--wide" id="alumina" data-km="36">
-        <aside class="quip" style="--qt:22%" aria-hidden="true">Alumina was told it doesn’t absorb light. It took that personally.</aside>
+        <div class="quips"><aside class="quip" style="--qt:22%" aria-hidden="true">Alumina was told it doesn’t absorb light. It took that personally.</aside></div>
         <div class="project__head">
           <div class="tags"><span class="tag tag--alt">Stratosphere · Alumina optics</span><span class="tag tag--first">Co-first author</span><a class="tag tag--pub" href="https://doi.org/10.1029/2026GL121668" target="_blank" rel="noopener">Published · Geophys. Res. Lett. 2026 ↗</a></div>
           <h3>Is alumina really a non-absorbing SAI particle?</h3>
@@ -778,8 +784,7 @@ a.tag:hover{border-color:var(--sky)}
       <div class="wrap">
         <div class="sai-label"><span>SAI layer · 18–23 km</span><span>where injected particles would live</span></div>
         <article class="project project--wide" id="agg">
-        <aside class="quip quip--r" style="--qt:10%" aria-hidden="true">Monodisperse aerosols are like a perfect week in grad school: great in theory, never seen in the lab.</aside>
-        <aside class="quip" style="--qt:55%" aria-hidden="true">Climate models treat aerosols as spheres. The aerosols disagree.</aside>
+        <div class="quips"><aside class="quip quip--r" style="--qt:10%" aria-hidden="true">Monodisperse aerosols are like a perfect week in grad school: great in theory, never seen in the lab.</aside><aside class="quip" style="--qt:55%" aria-hidden="true">Climate models treat aerosols as spheres. The aerosols disagree.</aside></div>
           <div class="project__head">
             <div class="tags"><span class="tag tag--alt">Stratosphere · SAI layer 18–23 km</span><span class="tag tag--live">First-author manuscript in prep.</span><span class="tag">AGU 2025 oral</span><span class="tag">Simons SRM 2026 poster</span></div>
             <h3>Are climate models missing SAI aggregate physics?</h3>
@@ -819,8 +824,7 @@ a.tag:hover{border-color:var(--sky)}
   <div class="layer layer--tropo">
     <div class="wrap stack">
       <article class="project project--wide" id="pas" data-km="7">
-        <aside class="quip quip--r" style="--qt:10%" aria-hidden="true">Photoacoustics: the only technique where particles make noise about being absorbed.</aside>
-        <aside class="quip" style="--qt:56%" aria-hidden="true">Allan deviation: statistics for instruments with commitment issues.</aside>
+        <div class="quips"><aside class="quip quip--r" style="--qt:10%" aria-hidden="true">Photoacoustics: the only technique where particles make noise about being absorbed.</aside><aside class="quip" style="--qt:56%" aria-hidden="true">Allan deviation: statistics for instruments with commitment issues.</aside></div>
         <div class="project__head">
           <div class="tags"><span class="tag tag--alt">Troposphere · The lab in St. Louis</span><span class="tag">AAAR 2023 oral</span><span class="tag">AAAR 2024 poster</span></div>
           <h3>Sharper photoacoustic absorption measurements</h3>
@@ -850,7 +854,7 @@ a.tag:hover{border-color:var(--sky)}
       </article>
 
       <article class="project project--wide" id="tutorial" data-km="5">
-        <aside class="quip quip--r" style="--qt:28%" aria-hidden="true">Shine a laser on soot and it hums. That’s not a metaphor; that’s my PhD.</aside>
+        <div class="quips"><aside class="quip quip--r" style="--qt:28%" aria-hidden="true">Shine a laser on soot and it hums. That’s not a metaphor; that’s my PhD.</aside></div>
         <div class="project__head">
           <div class="tags"><span class="tag tag--alt">Troposphere · The lab in St. Louis</span><span class="tag tag--first">First author</span><a class="tag tag--pub" href="https://doi.org/10.1016/j.jaerosci.2024.106518" target="_blank" rel="noopener">Published · J. Aerosol Sci. 2025 ↗</a></div>
           <h3>Tutorial: a photoacoustic spectrometer to measure aerosol light absorption</h3>
@@ -883,8 +887,7 @@ a.tag:hover{border-color:var(--sky)}
   <div class="layer layer--surface">
     <div class="wrap found">
       <article class="project project--wide" id="masters">
-        <aside class="quip" style="--qt:16%" aria-hidden="true">My acoustic levitator holds droplets in mid-air. My Monday motivation, not so much.</aside>
-        <aside class="quip quip--r" style="--qt:44%" aria-hidden="true">Electrodynamic balance: keeping droplets centered so I don’t have to.</aside>
+        <div class="quips"><aside class="quip" style="--qt:16%" aria-hidden="true">My acoustic levitator holds droplets in mid-air. My Monday motivation, not so much.</aside><aside class="quip quip--r" style="--qt:44%" aria-hidden="true">Electrodynamic balance: keeping droplets centered so I don’t have to.</aside></div>
         <div class="project__head">
           <div class="sec-title"><span class="badge badge--sm" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAH40lEQVR42u1dT8hUVRT/nTfz6WdpmqSkglQoqahYYlEuNFKQDDd9gRtroQW1kEBtYa0MgzRKXShoG90UZAslsPATXNRCQYNM+0sZVEpCGJao38z7tXjn9l2fb96d730z896buQce4/jNu+fcc37nnPvuOXMH8OTJkydPnjx56kWSoghCstJBeSgidW/+YeUHvcCzkB5AUkSEJFcAWAVgvPXnqr7WMsjK2P2G/gHwmYgMGt49j3ySO9h52lkET5AclV8RkTrJpwEMAqgrajs17wqAFSJywsiShx6qBTD+GgChXn0d4j2k/NcAOJEnEAN4ypXyNIAJN0dVjkCRmRaGQk2oaVfo4Dlk8Tsak8UnYZ+E81uGrgSwAsCzAOYpkgML+QGAbwGc1NzFhLnUACwHMLfB/RcAfApgUESO9/wyNOmhiOQeReiQhVbz791NjLU75f49RXsQqxZBCBEJSY7VpWh/ykfHkayq3LWEudQAjEu5v1/vr4jITW+A26kuIjWSqUlYPwMRqcWQD/1b6NgDqqWz8MtQvwz15A3gDeDJG8AbwJM3gDeAJ28AbwBP3gDeAJ68AbwBPHkDeAO0k0hKN/AorQG0PpumoGYqKUxnUawacFAQ5AcAQpL3AXhGlVjJKG/SZyo65mrlERalJhwUB/wSAtgGYAaiLoYkT/iribGSPiM65nQA25RXoUJRnuiv6Osi7V6okQytjoaQZF3/f5HlMUleZMap6T3xcWp6PWLz9gaIXk+qomqxBirzfp9LadZY+xxjnfQGuF1haxsorK7XFZJTSEpa7CYZ6Gem6D3m/iQjrO1pIxhlkpxA8lcr1CQp69VmlWUZ9ZUUo4bKc7wxWi+jf7sjXHxFskqy0oyi1LAVveesY+ztPekFVqiYRfJ6QsK0lbRspEqyjLusgQGMt10nOdsV2roZ/UccCP0oK0ItHh86eBzpKS+wFLPKgc5rJGdmRaflZTN1rDQvW9UTRrDi8xiSFxyJ943RKsUy9lZHQr5AcmyzeaYb0L/JoZAfSfaPdoVirbT6Sf7gMPjmrvYCKyRMJ3nVERLWtEoZltHXOELeVZWtOxOypYiDjqR4rNVItHgfc/A+2JVeYCngCWtPJgmFN0nONbmilfx1zLnKo5H3hSSf7CojWIk3IHmqAQLNV4jebdfkLRDsTPgKky3TKZW1OxKyfiUIJNc7Eu/vJCe2a2vASsgTlVdaQl5vy172xBuQvJfkJcfm2Ivtdn3LC15wgOGyyhyUOiFbE97lSH6nSfbpWrza5mus8jrlkGlXqXOBpfz5JG+lFFqukZydg3yzGjwhm0XCLZIL2m2ETsS49xEdwlHHnWXAAMC/ADbq11Q7eVrKTeU9PsbXyNgH4D0AK9stSFvQr0fRPAfgsCq/bK5sZB4QkU/adaRNW1YbOm4/gHMAHlSENUpm1MnmQWnn1JnC/UUA8wHcQPQ945Z6aTsyfKBdB1sAPKTKDRwgqOZ0iUM3dQXQFp1TUGgP0CUbATyg6B+nPMr6QEO9bqgXXMRwC00hk7DouQ87ANzdAP2dPJosCyArsfchgLsA7BSRgVY/F0gL0Z90BlwlAVFSAtRLg4S8Uk9bbFlClhYpXzB8CtUZAAtw+3k99sSOA/gJyWf+5In8GoBZuuyMG8HM5RyAxfo+LEyfqbXfs9HxiP8Lyb7CQj96Qv7ZsU+0sZX7RNICoQ3KpyA6kWpSQuI1Lvy8iBy2zgYqElVE5CbJAQAfJ4RQk5CvIjrR64omvTBv1JgthwOOvZXBou+tWHMZdMzlg0LMxRJ4idVA22hfZWGJDLCgwf4VrcbfJbnPx6o0feFAzJ6iKz/BCLsdc/qy1ZW7rIKuczTWXiY5uSx761YNY7LKnlbDWJcLsGLVpd8cq4YNrVw1dHhVtyHPKl4z6HfVV0+Xsb4aq2OfdtSxd3bUC6z+njlNdBgsLUvsTwHZ0iY6OebEluQdEWy/A/2Hyqr8hLkecnjB/o7M1YQRkveQ/NNCgo2KkOTfJGeUvcvM8vYZ2jkXJsyXqot7bB21GxFPWckorc+y3G0dtyfkzSkJmSSXZ/GCkaLTWHeePpaHsUf1CoA/AOxVJHTDLxXVdS57AVzC8HeO7Y06qk5GvL2TNTxMTWBkjHFWRK4jqoyV/mRynUOgczoTm6sNzKlZxveHdeRMWQ1wBXfu5ZuxHiXZ37FlWQcSsb72I6oFJOmNqpMR00iTpFH6eXW7IOaGdUTHAWwRkbd0BVH2RFzXMutWANNw5zZ1oHM/H9NRbstQ82D2uvGEkntAv84labtl1MtQySCQqf3uB/ASolJeNcFTBFHp8TSAayhfZwQBTADwGKJSZVKt2Mz9gIi8nKVWLBljIgE8DOBrDNeCGxWyu4EaNRiY3z9bCOB7ZGhZGXF81nhYEZHvSL4D4E0AtwCMiX20YglY9oVKEpCGdM5vqy4ydUpkCgtWFwQQ/SrRKhWoiu4/h4caevoAfA5gtXk2yPLck2mZqIwMugdUkD4rLrKLFQ9L+QMYZYvKqNBKMjAhCcB2AJussFbvIkPYHXM1RG3rW3UxEoymM6IVbSn/H4RHcjGA1xD9GNukLvOAqxpud4nImfjcczOAnRNMEiJ5P4DHETW0TkPnfiW11TSEaAPuGwCnROSyWYqjSJ1xdkjq5gMvTJmy1bGtXU/MQRetiFhIxHvy5MmTp1LTfwfk8fB06m8wAAAAAElFTkSuQmCC" alt=""></span><p class="eyebrow eyebrow--ink">Master’s Research</p></div>
           <div class="tags"><span class="tag">Joint Master’s · IIT Bombay × WashU</span><span class="tag">2021–2022</span></div>
@@ -2072,6 +2075,38 @@ a.tag:hover{border-color:var(--sky)}
       } catch (err) { fallback(); }
     });
   });
+
+  /* ---------- in-page links: land each heading just below the sticky header ---------- */
+  var topbarEl = document.querySelector(".topbar");
+  var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var landOn = function (id, smooth) {
+    var t = id === "top" ? null : document.getElementById(id);
+    if (id !== "top" && (!t || (t.closest && t.closest("dialog")))) return false;
+    var y = 0;
+    if (t) {
+      var anchorEl = t;
+      if (t.tagName === "SECTION") { var h = t.querySelector(".section-head, .sec-title, .eyebrow, h2"); if (h) anchorEl = h; }
+      var hh = topbarEl ? topbarEl.getBoundingClientRect().height : 0;
+      y = anchorEl.getBoundingClientRect().top + (window.pageYOffset || 0) - hh - 20;
+    }
+    try { window.scrollTo({ top: Math.max(0, y), behavior: smooth && !reduceMotion ? "smooth" : "instant" }); }
+    catch (err) { window.scrollTo(0, Math.max(0, y)); }
+    return true;
+  };
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = decodeURIComponent(a.getAttribute("href").slice(1));
+    if (!id) return;
+    if (landOn(id, true)) {
+      e.preventDefault();
+      if (history.pushState) { try { history.pushState(null, "", "#" + id); } catch (err) {} }
+    }
+  });
+  if (location.hash && location.hash.length > 1) {
+    window.addEventListener("load", function () { setTimeout(function () { landOn(decodeURIComponent(location.hash.slice(1)), false); }, 50); });
+  }
 
   /* ---------- nav: mark the section in view ---------- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
