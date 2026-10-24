@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="theme-color" content="#070B1D">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115.47'%3E%3Cpolygon points='50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87' fill='%23B60C40'/%3E%3Ctext x='50' y='72' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='%23fff' text-anchor='middle'%3EPU%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20115.47'%3E%3Cpolygon%20points='50,0%20100,28.87%20100,86.6%2050,115.47%200,86.6%200,28.87'%20fill='%23B60C40'/%3E%3Cpath%20fill='%23fff'%20d='M21.41%2042.13L34.51%2042.13Q40.36%2042.13%2043.48%2044.72Q46.61%2047.32%2046.61%2052.11Q46.61%2056.94%2043.48%2059.53Q40.36%2062.12%2034.51%2062.12L29.31%2062.12L29.31%2072.75L21.41%2072.75L21.41%2042.13ZM29.31%2047.85L29.31%2056.4L33.67%2056.4Q35.97%2056.4%2037.22%2055.28Q38.48%2054.17%2038.48%2052.11Q38.48%2050.07%2037.22%2048.96Q35.97%2047.85%2033.67%2047.85L29.31%2047.85ZM52.2%2042.13L60.09%2042.13L60.09%2060.48Q60.09%2064.27%2061.33%2065.91Q62.57%2067.54%2065.38%2067.54Q68.21%2067.54%2069.45%2065.91Q70.69%2064.27%2070.69%2060.48L70.69%2042.13L78.59%2042.13L78.59%2060.48Q78.59%2066.98%2075.32%2070.17Q72.07%2073.34%2065.38%2073.34Q58.71%2073.34%2055.45%2070.17Q52.2%2066.98%2052.2%2060.48L52.2%2042.13Z'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Prabhav Upadhyay · Aerosol optics, instrumentation and satellite re-entry aerosols">
 <meta property="og:description" content="Prabhav Upadhyay, WashU PhD candidate in aerosol optics and photoacoustic instruments, seeking postdoctoral positions from Summer 2027.">
@@ -358,19 +358,29 @@ html:has(.method[open]){overflow:hidden}
 .horizon .glow{fill:none;stroke:var(--low-line);stroke-width:1.5}
 
 /* altimeter rail */
-.rail{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);height:min(62vh,560px);width:96px;z-index:40;pointer-events:none;opacity:0;transition:opacity .35s ease;display:none}
+.rail{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);height:min(62vh,560px);width:96px;z-index:40;pointer-events:none;opacity:0;transition:opacity .35s ease}
 .rail.is-on{opacity:1}
-@media (min-width:1400px){.rail{display:block}}
 .rail__track{position:absolute;right:8px;top:0;bottom:0;width:2px;background:rgba(235,240,252,.22);border-radius:2px}
-.rail__tick{position:absolute;right:0;width:12px;height:0;border-top:1.5px solid rgba(235,240,252,.55)}
+.rail__tick{position:absolute;right:3px;width:12px;height:0;border-top:1.5px solid rgba(235,240,252,.55)}
 .rail__tick span{position:absolute;right:18px;top:-.62em;font-family:var(--mono);font-size:.64rem;color:rgba(235,240,252,.75);white-space:nowrap;background:rgba(6,11,34,.55);padding:0 4px;border-radius:4px}
 .rail__tick--sai{border-top-color:var(--gold)}
 .rail__tick--sai span{color:#F7D68A}
-.rail__marker{position:absolute;right:-4px;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(242,179,61,.25)}
+.rail__marker{position:absolute;right:4px;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(242,179,61,.25)}
 .rail__readout{position:absolute;right:20px;margin-top:-18px;text-align:right;background:rgba(6,11,34,.82);border:1px solid rgba(242,179,61,.45);padding:5px 8px;border-radius:8px;min-width:88px}
 .rail__readout b{display:block;font-family:var(--mono);font-size:.82rem;color:#FFF;font-weight:600}
 .rail__readout i{display:block;font-style:normal;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#F7D68A}
 .rail__note{position:absolute;right:0;bottom:-26px;font-family:var(--mono);font-size:.56rem;color:rgba(235,240,252,.6);background:rgba(6,11,34,.55);padding:1px 5px;border-radius:4px;white-space:nowrap}
+/* compact rail below 1400px: a slim gauge in the right gutter; the readout shows while scrolling */
+@media (max-width:1399.98px){
+  .rail{right:max(2px,env(safe-area-inset-right,0px));width:16px;height:min(56vh,460px)}
+  .rail__track{right:7px;width:2px;background:rgba(235,240,252,.3)}
+  .rail__tick{right:4px;width:8px}
+  .rail__tick span,.rail__note{display:none}
+  .rail__marker{right:3px;box-shadow:0 0 0 3px rgba(242,179,61,.28)}
+  .rail__readout{right:20px;min-width:0;padding:4px 8px;opacity:0;transition:opacity .25s ease}
+  .rail.is-awake .rail__readout{opacity:1}
+}
+@media print{.rail{display:none}}
 
 /* ---------- foundations ---------- */
 .found{display:grid;gap:clamp(24px,3vw,36px)}
@@ -621,7 +631,7 @@ a.tag:hover{border-color:var(--sky)}
     </div>
   </div>
 
-  <div class="boundary boundary--karman" data-km="100"><div class="wrap"><span>Kármán line · 100 km</span><span>Altitude*</span></div></div>
+  <div class="boundary boundary--karman" data-km="100" data-km-name="Kármán line"><div class="wrap"><span>Kármán line · 100 km</span><span>Altitude*</span></div></div>
 
   <!-- MESOSPHERE -->
   <div class="layer layer--meso">
@@ -745,7 +755,7 @@ a.tag:hover{border-color:var(--sky)}
     </div>
   </div>
 
-  <div class="boundary boundary--strato" data-km="50"><div class="wrap"><div class="quips"><aside class="quip" style="--qt:-34px" aria-hidden="true">I’d tell you an aerosol joke, but it would just float over your head.</aside><aside class="quip quip--r" style="--qt:-34px; --qt2:96px" aria-hidden="true">Why did the photon skip the checked bag? It was traveling light.</aside></div><span>Stratopause · 50 km</span><span>Stratosphere</span></div></div>
+  <div class="boundary boundary--strato" data-km="50" data-km-name="Stratopause"><div class="wrap"><div class="quips"><aside class="quip" style="--qt:-34px" aria-hidden="true">I’d tell you an aerosol joke, but it would just float over your head.</aside><aside class="quip quip--r" style="--qt:-34px; --qt2:96px" aria-hidden="true">Why did the photon skip the checked bag? It was traveling light.</aside></div><span>Stratopause · 50 km</span><span>Stratosphere</span></div></div>
 
   <!-- STRATOSPHERE -->
   <div class="layer layer--strato">
@@ -780,7 +790,7 @@ a.tag:hover{border-color:var(--sky)}
       </article>
     </div>
 
-    <div class="sai-band" data-km="21">
+    <div class="sai-band" data-km="21" data-km-top="23" data-km-bottom="18">
       <div class="wrap">
         <div class="sai-label"><span>SAI layer · 18–23 km</span><span>where injected particles would live</span></div>
         <article class="project project--wide" id="agg">
@@ -818,7 +828,7 @@ a.tag:hover{border-color:var(--sky)}
     </div>
   </div>
 
-  <div class="boundary boundary--tropo" data-km="12"><div class="wrap"><span>Tropopause · ~12 km</span><span>Troposphere</span></div></div>
+  <div class="boundary boundary--tropo" data-km="12" data-km-name="Tropopause"><div class="wrap"><span>Tropopause · ~12 km</span><span>Troposphere</span></div></div>
 
   <!-- TROPOSPHERE -->
   <div class="layer layer--tropo">
@@ -881,7 +891,7 @@ a.tag:hover{border-color:var(--sky)}
     </div>
   </div>
 
-  <div class="boundary boundary--surface" data-km="0"><div class="wrap"><span>Surface · 0 km</span><span>Mumbai · St. Louis</span></div></div>
+  <div class="boundary boundary--surface" data-km="0" data-km-name="Surface"><div class="wrap"><span>Surface · 0 km</span><span>Mumbai · St. Louis</span></div></div>
 
   <!-- SURFACE -->
   <div class="layer layer--surface">
@@ -1910,7 +1920,7 @@ a.tag:hover{border-color:var(--sky)}
     var marker = document.getElementById("railMarker"), readout = document.getElementById("railReadout");
     var kmEl = document.getElementById("railKm"), layerEl = document.getElementById("railLayer");
     var TICKS = [[100, 0], [85, 14], [50, 42], [23, 61], [18, 67], [12, 76], [0, 100]];
-    var anchors = [], ticking = false;
+    var ticking = false, idleT = null;
     var railPct = function (km) {
       for (var i = 0; i < TICKS.length - 1; i++) {
         var a = TICKS[i], b = TICKS[i + 1];
@@ -1919,41 +1929,100 @@ a.tag:hover{border-color:var(--sky)}
       return km > 100 ? 0 : 100;
     };
     var layerName = function (km) {
+      km = Math.round(km * 10) / 10;
       if (km >= 99.5) return "Kármán line"; if (km > 85) return "Thermosphere"; if (km > 50) return "Mesosphere";
       if (km > 23) return "Stratosphere"; if (km >= 18) return "SAI layer"; if (km > 12) return "Stratosphere";
       if (km > 0.4) return "Troposphere"; return "Surface";
     };
-    var measureRail = function () {
-      anchors = Array.prototype.map.call(atmos.querySelectorAll("[data-km]"), function (el) {
-        var r = el.getBoundingClientRect();
-        return { y: r.top + window.scrollY + r.height / 2, km: parseFloat(el.getAttribute("data-km")) };
-      }).sort(function (a, b) { return a.y - b.y; });
+    /* Anchors are read live on every update, so switching a tab, a late image or "Load figures"
+       can never leave the rail pointing at the wrong layer. Boundaries anchor on their dashed line;
+       a band with data-km-top/-bottom anchors on its two gold lines (its ::after edges). */
+    var anchorEls = Array.prototype.slice.call(atmos.querySelectorAll("[data-km]")), lineOffs = [], bandIns = [];
+    var measureOffs = function () {
+      lineOffs = anchorEls.map(function (el) {
+        if (!el.classList.contains("boundary")) return null;
+        var v = parseFloat(getComputedStyle(el, "::before").top);
+        return isNaN(v) ? null : v;
+      });
+      bandIns = anchorEls.map(function (el) {
+        if (el.getAttribute("data-km-top") === null) return null;
+        var cs = getComputedStyle(el, "::after"), h = el.getBoundingClientRect().height || 1;
+        var frac = function (v) { v = String(v || ""); return /%$/.test(v) ? parseFloat(v) / 100 : (parseFloat(v) || 0) / h; };
+        return [frac(cs.top), frac(cs.bottom)];
+      });
     };
-    var kmAt = function (y) {
-      if (!anchors.length) return 100;
-      if (y <= anchors[0].y) return anchors[0].km;
-      for (var i = 0; i < anchors.length - 1; i++) {
-        var a = anchors[i], b = anchors[i + 1];
+    var anchorsNow = function () {
+      var list = [];
+      anchorEls.forEach(function (el, i) {
+        var r = el.getBoundingClientRect();
+        if (!r.height) return;
+        var top = el.getAttribute("data-km-top"), bot = el.getAttribute("data-km-bottom");
+        if (top !== null && bot !== null) {
+          var ins = bandIns[i] || [0, 0];
+          list.push({ y: r.top + ins[0] * r.height, km: parseFloat(top) }); list.push({ y: r.bottom - ins[1] * r.height, km: parseFloat(bot) });
+        } else {
+          list.push({ y: lineOffs[i] != null ? r.top + lineOffs[i] : r.top + r.height / 2, km: parseFloat(el.getAttribute("data-km")), name: el.getAttribute("data-km-name") });
+        }
+      });
+      list.sort(function (p, q) { return p.y - q.y; });
+      /* keep the marker moving one way: drop an unnamed anchor that sits closer to its neighbour
+         on the page than their ticks sit on the rail */
+      var H = rail.getBoundingClientRect().height, again = H > 0;
+      while (again && list.length > 2) {
+        again = false;
+        for (var i = 0; i < list.length - 1; i++) {
+          var a = list[i], b = list[i + 1];
+          if (Math.abs(railPct(b.km) - railPct(a.km)) / 100 * H > 0.8 * (b.y - a.y)) {
+            var drop = !a.name ? i : (!b.name ? i + 1 : -1);
+            if (drop >= 0) { list.splice(drop, 1); again = true; break; }
+          }
+        }
+      }
+      return list;
+    };
+    var kmAt = function (list, y) {
+      if (!list.length) return 100;
+      if (y <= list[0].y) return list[0].km;
+      for (var i = 0; i < list.length - 1; i++) {
+        var a = list[i], b = list[i + 1];
         if (y >= a.y && y <= b.y) return a.km + (b.km - a.km) * ((y - a.y) / ((b.y - a.y) || 1));
       }
-      return anchors[anchors.length - 1].km;
+      return list[list.length - 1].km;
     };
     var updateRail = function () {
       ticking = false;
-      var r = atmos.getBoundingClientRect();
-      var on = r.top < innerHeight * 0.5 && r.bottom > innerHeight * 0.5;
+      var r = atmos.getBoundingClientRect(), vh = window.innerHeight;
+      var on = r.top < vh * 0.5 && r.bottom > vh * 0.5;
       rail.classList.toggle("is-on", on);
       if (!on) return;
-      var km = kmAt(window.scrollY + innerHeight * 0.5), p = railPct(km) + "%";
+      var list = anchorsNow(), rb = rail.getBoundingClientRect();
+      /* The marker reads the page at its own height on screen, so a boundary's dashed line meets the
+         marker exactly at that boundary's tick: solve y = top + pct(km(y)) * height by bisection. */
+      var lo = rb.top, hi = rb.bottom;
+      for (var k = 0; k < 24; k++) {
+        var mid = (lo + hi) / 2;
+        if (rb.top + railPct(kmAt(list, mid)) / 100 * rb.height > mid) lo = mid; else hi = mid;
+      }
+      var y = (lo + hi) / 2, km = kmAt(list, y);
+      var p = railPct(km) + "%";
       marker.style.top = p; readout.style.top = p;
       kmEl.textContent = (km >= 10 ? Math.round(km) : km.toFixed(1)) + " km";
-      layerEl.textContent = layerName(km);
+      var label = layerName(km);
+      for (var j = 0; j < list.length; j++) if (list[j].name && Math.abs(list[j].y - y) < 16) { label = list[j].name; break; }
+      layerEl.textContent = label;
     };
-    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(updateRail); } }, { passive: true });
-    window.addEventListener("resize", function () { measureRail(); updateRail(); });
-    window.addEventListener("load", function () { measureRail(); updateRail(); });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measureRail(); updateRail(); });
-    measureRail(); updateRail();
+    var schedule = function () { if (!ticking) { ticking = true; requestAnimationFrame(updateRail); } };
+    /* compact rail (narrow screens): the readout shows while scrolling, then fades */
+    var wake = function () {
+      rail.classList.add("is-awake"); clearTimeout(idleT);
+      idleT = setTimeout(function () { rail.classList.remove("is-awake"); }, 1600);
+    };
+    window.addEventListener("scroll", function () { wake(); schedule(); }, { passive: true });
+    window.addEventListener("resize", function () { measureOffs(); schedule(); });
+    window.addEventListener("load", function () { measureOffs(); schedule(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measureOffs(); schedule(); });
+    if ("ResizeObserver" in window) new ResizeObserver(schedule).observe(atmos);
+    measureOffs(); updateRail();
   }
 
   /* ---------- toolkit explorer ---------- */
