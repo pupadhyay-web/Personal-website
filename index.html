@@ -562,6 +562,34 @@ a.tag:hover{border-color:var(--sky)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(48px,7vw,88px);padding-top:18px;border-top:1px solid var(--space-line);font-family:var(--mono);font-size:.72rem;color:var(--on-space-muted);letter-spacing:.04em}
 @media (max-width:820px){.contact__grid{grid-template-columns:minmax(0,1fr)}}
 </style>
+<!-- ===================== VISIT STATS (Umami Cloud, cookie-free) =====================
+     Paste your Umami Website ID between the quotes below (cloud.umami.is > Websites > Edit).
+     Leave it empty to switch all tracking off.
+     Your own visits: open the site once with ?notrack at the end of the address to stop counting
+     yourself in that browser; ?track turns it back on. -->
+<script>
+window.SITE_ANALYTICS_ID = "5dfac403-3f60-4e8f-8359-faed4968ab5f";
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.has("notrack")) { localStorage.setItem("umami.disabled", "1"); alert("Your visits in this browser are no longer counted."); }
+    if (q.has("track")) { localStorage.removeItem("umami.disabled"); alert("Your visits in this browser are counted again."); }
+    if (q.has("notrack") || q.has("track")) {
+      q.delete("notrack"); q.delete("track");
+      var qs = q.toString();
+      history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+    }
+  } catch (e) {}
+  var id = window.SITE_ANALYTICS_ID;
+  if (!id) return;
+  var s = document.createElement("script");
+  s.defer = true;
+  s.src = "https://cloud.umami.is/script.js";
+  s.setAttribute("data-website-id", id);
+  s.setAttribute("data-domains", "pupadhyay-web.github.io");
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 <body>
 
@@ -2230,5 +2258,116 @@ a.tag:hover{border-color:var(--sky)}
 })();
 </script>
 
+<script>
+/* ---------- visit stats: reading time per section, CV views and downloads, outbound links ---------- */
+(function () {
+  "use strict";
+  if (!window.SITE_ANALYTICS_ID) return;
+  var queue = [];
+  var ready = function () { return window.umami && typeof window.umami.track === "function"; };
+  var send = function (name, data) {
+    try {
+      if (ready()) window.umami.track(name, data);
+      else if (queue.length < 40) queue.push([name, data]);
+    } catch (e) {}
+  };
+  var tries = 0, poll = setInterval(function () {
+    if (ready()) {
+      clearInterval(poll);
+      queue.splice(0).forEach(function (q) { try { window.umami.track(q[0], q[1]); } catch (e) {} });
+    } else if (++tries > 60) { clearInterval(poll); queue.length = 0; }
+  }, 500);
+  var range = function (s) {
+    return s < 10 ? "under 10 s" : s < 30 ? "10-30 s" : s < 60 ? "30-60 s" : s < 120 ? "1-2 min" : s < 300 ? "2-5 min" : "5+ min";
+  };
+
+  /* Reading time: each second goes to the section filling most of the screen, counted only while the
+     tab is visible and the visitor has scrolled, clicked or typed in the last 2 minutes. */
+  var SECTIONS = [
+    ["top", "Home"], ["about", "About"],
+    ["reentry", "Research: satellite re-entry"], ["alumina", "Research: alumina optics"],
+    ["agg", "Research: aggregation"], ["pas", "Research: photoacoustics"],
+    ["tutorial", "Research: PA tutorial"], ["masters", "Research: master's levitation"],
+    ["toolkit", "Skills"], ["path", "Path"], ["publications", "Publications"],
+    ["teaching", "Teaching & service"], ["next", "What's next"],
+    ["interests", "Interests"], ["contact", "Contact"]
+  ];
+  var els = SECTIONS.map(function (p) { return document.getElementById(p[0]); });
+  var secs = SECTIONS.map(function () { return 0; });
+  var extra = {}, total = 0, lastActive = Date.now();
+  ["scroll", "wheel", "pointerdown", "pointermove", "keydown", "touchstart"].forEach(function (ev) {
+    document.addEventListener(ev, function () { lastActive = Date.now(); }, { passive: true, capture: true });
+  });
+  var dominant = function () {
+    var vh = window.innerHeight || document.documentElement.clientHeight, best = -1, bestPx = vh * 0.15;
+    for (var i = 0; i < els.length; i++) {
+      if (!els[i]) continue;
+      var r = els[i].getBoundingClientRect();
+      var px = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+      if (px > bestPx) { bestPx = px; best = i; }
+    }
+    return best;
+  };
+  setInterval(function () {
+    if (document.visibilityState !== "visible" || Date.now() - lastActive > 120000) return;
+    total++;
+    var dlg = document.querySelector("dialog[open]");
+    if (dlg) {
+      var key = dlg.id === "cvDialog" ? "CV viewer" : "Method: " + dlg.id;
+      extra[key] = (extra[key] || 0) + 1;
+      return;
+    }
+    var i = dominant();
+    if (i >= 0) secs[i]++;
+  }, 1000);
+  var flush = function () {
+    for (var i = 0; i < secs.length; i++) {
+      if (secs[i] >= 2) { send("Time: " + SECTIONS[i][1], { seconds: secs[i], range: range(secs[i]) }); secs[i] = 0; }
+    }
+    Object.keys(extra).forEach(function (k) {
+      if (extra[k] >= 2) { send("Time: " + k, { seconds: extra[k], range: range(extra[k]) }); extra[k] = 0; }
+    });
+    if (total >= 2) { send("Time on site", { seconds: total, range: range(total) }); total = 0; }
+  };
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") flush(); });
+  window.addEventListener("pagehide", flush);
+
+  /* Clicks: CV, methods, email, re-entry figures, outbound links */
+  var where = function (el) {
+    var d = el.closest("dialog");
+    if (d) return d.id === "cvDialog" ? "CV viewer" : "method dialog";
+    if (el.closest("header")) return "top menu";
+    var sec = el.closest("section[id]");
+    return sec ? sec.id : "page";
+  };
+  var FIG = { eels: "EELS", optics: "Optical properties", socol: "SOCOL-AER" };
+  var HOSTS = { "scholar.google.com": "Google Scholar", "orcid.org": "ORCID", "doi.org": "Paper (DOI)",
+    "arxiv.org": "arXiv", "air.eece.wustl.edu": "AIR Lab profile" };
+  document.addEventListener("click", function (e) {
+    if (!e.isTrusted) return;
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var a = t.closest("a[href], button");
+    if (!a) return;
+    if (a.hasAttribute("data-cv-download")) return send("CV download", { from: where(a) });
+    var dlgId = a.getAttribute("data-dialog");
+    if (dlgId === "cvDialog") return send("CV viewer opened", { from: where(a) });
+    if (dlgId) return send("Method opened", { method: dlgId });
+    if (a.hasAttribute("data-copy") || a.id === "copyBtn") return send("Email copied", { from: where(a) });
+    if (a.classList.contains("ptabs__tab")) return send("Re-entry figure", { figure: FIG[a.id.replace("pt-", "")] || a.id, via: "tab" });
+    if (a.hasAttribute("data-tab-target")) return send("Re-entry figure", { figure: FIG[a.getAttribute("data-tab-target").replace("pt-", "")] || "", via: "key results" });
+    if (a.tagName === "A") {
+      var href = a.getAttribute("href") || "";
+      if (href.indexOf("mailto:") === 0) return send(href.indexOf("Access") > -1 ? "Method access requested" : "Email link", { from: where(a) });
+      if (/^https?:/i.test(href)) {
+        var host;
+        try { host = new URL(a.href).hostname; } catch (er) { return; }
+        if (host === location.hostname) return;
+        return send("Link: " + (HOSTS[host] || host), { url: a.href.slice(0, 300), from: where(a) });
+      }
+    }
+  }, true);
+})();
+</script>
 </body>
 </html>
