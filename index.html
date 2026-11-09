@@ -6,18 +6,18 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20115.47'%3E%3Cpolygon%20points='50,0%20100,28.87%20100,86.6%2050,115.47%200,86.6%200,28.87'%20fill='%23B60C40'/%3E%3Cpath%20fill='%23fff'%20d='M21.41%2042.13L34.51%2042.13Q40.36%2042.13%2043.48%2044.72Q46.61%2047.32%2046.61%2052.11Q46.61%2056.94%2043.48%2059.53Q40.36%2062.12%2034.51%2062.12L29.31%2062.12L29.31%2072.75L21.41%2072.75L21.41%2042.13ZM29.31%2047.85L29.31%2056.4L33.67%2056.4Q35.97%2056.4%2037.22%2055.28Q38.48%2054.17%2038.48%2052.11Q38.48%2050.07%2037.22%2048.96Q35.97%2047.85%2033.67%2047.85L29.31%2047.85ZM52.2%2042.13L60.09%2042.13L60.09%2060.48Q60.09%2064.27%2061.33%2065.91Q62.57%2067.54%2065.38%2067.54Q68.21%2067.54%2069.45%2065.91Q70.69%2064.27%2070.69%2060.48L70.69%2042.13L78.59%2042.13L78.59%2060.48Q78.59%2066.98%2075.32%2070.17Q72.07%2073.34%2065.38%2073.34Q58.71%2073.34%2055.45%2070.17Q52.2%2066.98%2052.2%2060.48L52.2%2042.13Z'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Prabhav Upadhyay · Aerosol optics, instrumentation and satellite re-entry aerosols">
-<meta property="og:description" content="Prabhav Upadhyay, WashU PhD candidate in aerosol optics and photoacoustic instruments, seeking postdoctoral positions from Summer 2027.">
+<meta property="og:description" content="Prabhav Upadhyay, WashU PhD candidate in aerosol optics and photoacoustic instruments, seeking postdoctoral positions from August 2027.">
 <link rel="canonical" href="https://pupadhyay-web.github.io/Personal-website/">
 <meta property="og:url" content="https://pupadhyay-web.github.io/Personal-website/">
 <meta property="og:image" content="https://pupadhyay-web.github.io/Personal-website/preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Prabhav Upadhyay, PhD candidate in aerosol science, seeking postdoctoral positions from Summer 2027">
+<meta property="og:image:alt" content="Prabhav Upadhyay, PhD candidate in aerosol science, seeking postdoctoral positions from August 2027">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prabhav Upadhyay · Aerosol scientist</title>
 
-<meta name="description" content="Prabhav Upadhyay, WashU PhD candidate in aerosol optics and photoacoustic instruments, seeking postdoctoral positions from Summer 2027.">
+<meta name="description" content="Prabhav Upadhyay, WashU PhD candidate in aerosol optics and photoacoustic instruments, seeking postdoctoral positions from August 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -278,6 +278,20 @@ sub,sup{font-size:.68em;line-height:0}
 .ptabs__tab:hover{background:#26326C;color:#FFFFFF}
 .ptabs__tab[aria-selected="true"]{background:var(--hero-accent);color:#FFFFFF}
 .ptabs__tab:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.ptabs{scroll-margin-top:84px}
+.ptabs__num{display:inline-grid;place-items:center;width:22px;height:22px;margin-right:8px;border-radius:50%;background:rgba(255,255,255,.16);font-size:.8rem;line-height:1;vertical-align:1px}
+.ptabs__tab[aria-selected="true"] .ptabs__num{background:#FFFFFF;color:var(--hero-accent)}
+.krgrid{display:grid;gap:10px;padding:14px 16px;border:2px solid #0E2052;border-radius:12px;background:#FFFFFF;color:#0E2052}
+.krgrid .kr__label{color:#B60C40}
+.krgrid__list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.krgrid__item{font:inherit;width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:10px 12px;border:1px solid #D5DBEA;border-radius:10px;background:#F5F7FC;color:#0E2052;text-align:left;cursor:pointer;transition:background-color .15s ease,border-color .15s ease}
+.krgrid__item:hover{background:#E9EEFA;border-color:#B60C40}
+.krgrid__item:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.krgrid__num{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#B60C40;color:#FFFFFF;font-family:var(--display);font-weight:750;font-size:.9rem}
+.krgrid__text{font-size:.97rem;line-height:1.45}
+.krgrid__text b{font-weight:750}
+.krgrid__go{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#B60C40;white-space:nowrap}
+@media (max-width:560px){.krgrid__item{grid-template-columns:auto minmax(0,1fr)}.krgrid__go{grid-column:2}}
 .ptabs.is-tabbed>.pcard{border-radius:0 0 12px 12px}
 .ptabs.is-tabbed>.pcard>.combo__title{display:none}
 @media (max-width:760px){.ptabs__bar{grid-template-columns:minmax(0,1fr)}.ptabs__tab{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.ptabs__tab:last-child{border-bottom:0}}
@@ -366,7 +380,7 @@ html:has(.method[open]){overflow:hidden}
 .rail__tick--sai{border-top-color:var(--gold)}
 .rail__tick--sai span{color:#F7D68A}
 .rail__marker{position:absolute;right:4px;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(242,179,61,.25)}
-.rail__readout{position:absolute;right:20px;margin-top:-18px;text-align:right;background:rgba(6,11,34,.82);border:1px solid rgba(242,179,61,.45);padding:5px 8px;border-radius:8px;min-width:88px}
+.rail__readout{position:absolute;right:20px;margin-top:-18px;text-align:right;white-space:nowrap;background:rgba(6,11,34,.82);border:1px solid rgba(242,179,61,.45);padding:5px 8px;border-radius:8px;min-width:88px}
 .rail__readout b{display:block;font-family:var(--mono);font-size:.82rem;color:#FFF;font-weight:600}
 .rail__readout i{display:block;font-style:normal;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#F7D68A}
 .rail__note{position:absolute;right:0;bottom:-26px;font-family:var(--mono);font-size:.56rem;color:rgba(235,240,252,.6);background:rgba(6,11,34,.55);padding:1px 5px;border-radius:4px;white-space:nowrap}
@@ -469,6 +483,8 @@ html:has(.method[open]){overflow:hidden}
 @media (max-width:900px){.cards3{grid-template-columns:minmax(0,1fr)}}
 .support{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:clamp(16px,2.4vw,28px)}
 @media (max-width:700px){.support{grid-template-columns:minmax(0,1fr)}}
+.support--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.support--3{grid-template-columns:minmax(0,1fr)}}
 
 /* ---------- next ---------- */
 .next{background:linear-gradient(180deg,var(--bg),var(--surface-2))}
@@ -596,8 +612,8 @@ a.tag:hover{border-color:var(--sky)}
   </div>
   <div class="wrap">
     <dl class="hero__facts">
-      <div><dt>Expected graduation</dt><dd>Summer 2027 · Ph.D., WashU</dd></div>
-      <div class="wide"><dt>Research interests · in order of preference</dt><dd class="small">Aerosol representation in Earth system models · Experimental aerosol science · Novel atmospheric instrumentation · Aerosol optics · Aerosol dynamics · Radiative effects · Stratospheric chemistry · Satellite re-entry · Stratospheric aerosol injection</dd></div>
+      <div><dt>Expected graduation</dt><dd>August 2027 · Ph.D., WashU</dd></div>
+      <div class="wide"><dt>Research interests · in order of preference</dt><dd class="small">Experimental aerosol science · Novel atmospheric instrumentation · Aerosol optics · Radiative effects · Aerosol representation in Earth system models · Satellite re-entry · Stratospheric aerosol injection</dd></div>
       <div><dt>Fellowship</dt><dd>Dean’s Select Ph.D. Fellow</dd></div>
     </dl>
   </div>
@@ -639,7 +655,7 @@ a.tag:hover{border-color:var(--sky)}
       <article class="project project--wide" id="reentry" data-km="68">
         <div class="quips"><aside class="quip" style="--qt:4%" aria-hidden="true">What do you call a satellite that burns up on re-entry? A shooting star with a résumé.</aside><aside class="quip quip--r" style="--qt:46%" aria-hidden="true">Aluminum walks into a bar of oxygen and leaves with a shell.</aside></div>
         <div class="project__head">
-          <div class="tags"><span class="tag tag--alt">Mesosphere · 50–85 km · Re-entry</span><span class="tag tag--live">Current work · manuscript in prep.</span></div>
+          <div class="tags"><span class="tag tag--alt">Mesosphere · 50–85 km · Re-entry</span><span class="tag tag--live">Current work · manuscript in prep.</span><span class="tag">AAAR 2026 poster</span></div>
           <h3>Do re-entering satellites really emit pure alumina, and how does it affect stratospheric warming and ozone?</h3>
         </div>
         <figure class="figure figure--dark">
@@ -678,11 +694,19 @@ a.tag:hover{border-color:var(--sky)}
             <span class="schem__cta">Read the method
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="9" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg></span>
           </button>
+        <div class="krgrid" role="group" aria-labelledby="krgrid-label">
+          <p class="kr__label" id="krgrid-label">Key results · three figures below</p>
+          <ol class="krgrid__list">
+            <li><button class="krgrid__item" type="button" data-tab-target="pt-eels"><span class="krgrid__num" aria-hidden="true">1</span><span class="krgrid__text"><b>Interface plasmons</b> form between the Al core and Al<sub>2</sub>O<sub>3</sub> shell (near 7&nbsp;eV), boosting absorption.</span><span class="krgrid__go">EELS ↓</span></button></li>
+            <li><button class="krgrid__item" type="button" data-tab-target="pt-optics"><span class="krgrid__num" aria-hidden="true">2</span><span class="krgrid__text">Core–shell particles absorb <b>30–910 times more sunlight</b> per unit mass than Al<sub>2</sub>O<sub>3</sub>.</span><span class="krgrid__go">Optics ↓</span></button></li>
+            <li><button class="krgrid__item" type="button" data-tab-target="pt-socol"><span class="krgrid__num" aria-hidden="true">3</span><span class="krgrid__text">100&nbsp;Gg/yr of these particles <b>warms the lower stratosphere by up to 1.6&nbsp;K</b>, slows the Brewer–Dobson circulation and redistributes ozone.</span><span class="krgrid__go">SOCOL-AER ↓</span></button></li>
+          </ol>
+        </div>
         <div class="ptabs" data-tabs>
           <div class="ptabs__bar" role="tablist" aria-label="From particle analogues to climate response" hidden>
-            <button class="ptabs__tab" type="button" role="tab" id="pt-eels" aria-controls="pp-eels" aria-selected="true">Electron energy loss spectroscopy</button>
-            <button class="ptabs__tab" type="button" role="tab" id="pt-optics" aria-controls="pp-optics" aria-selected="false" tabindex="-1">Optical properties of single particles</button>
-            <button class="ptabs__tab" type="button" role="tab" id="pt-socol" aria-controls="pp-socol" aria-selected="false" tabindex="-1">SOCOL-AER climate simulation</button>
+            <button class="ptabs__tab" type="button" role="tab" id="pt-eels" aria-controls="pp-eels" aria-selected="true"><span class="ptabs__num" aria-hidden="true">1</span>Electron energy loss spectroscopy</button>
+            <button class="ptabs__tab" type="button" role="tab" id="pt-optics" aria-controls="pp-optics" aria-selected="false" tabindex="-1"><span class="ptabs__num" aria-hidden="true">2</span>Optical properties of single particles</button>
+            <button class="ptabs__tab" type="button" role="tab" id="pt-socol" aria-controls="pp-socol" aria-selected="false" tabindex="-1"><span class="ptabs__num" aria-hidden="true">3</span>SOCOL-AER climate simulation</button>
           </div>
           <figure class="pcard" id="pp-eels">
             <h4 class="combo__title">Electron energy loss spectroscopy signal</h4>
@@ -851,7 +875,7 @@ a.tag:hover{border-color:var(--sky)}
         </div>
         <div class="project__cols">
           <div class="project__main">
-            <div class="kr kr--wide"><span class="kr__label">Key results</span><p><b>Laser-drift correction lowers the detection limit from 8.7 to 7.5&nbsp;Mm<sup>−1</sup> (≈14%)</b> for 1&nbsp;s measurements with a 405&nbsp;nm photoacoustic spectrometer.</p><p><b>COMSOL</b> finite-element model of the resonator: sensitivity is set mainly by resonator diameter <i>D</i> and acoustic-filter opening <i>D</i><sub>h</sub> (optimum for <i>L</i> = 1&nbsp;m: <i>D</i> ≈ 1.18&nbsp;cm, <i>D</i><sub>h</sub> = 1&nbsp;cm).</p></div>
+            <div class="kr kr--wide"><span class="kr__label">Key results</span><p><b>Laser-drift correction lowers the detection limit from 8.7 to 7.5&nbsp;Mm<sup>−1</sup> (≈14%)</b> for 1&nbsp;s measurements with a 1047&nbsp;nm photoacoustic spectrometer.</p><p><b>COMSOL</b> finite-element model of the resonator: sensitivity is set mainly by resonator diameter <i>D</i> and acoustic-filter opening <i>D</i><sub>h</sub> (optimum for <i>L</i> = 1&nbsp;m: <i>D</i> ≈ 1.18&nbsp;cm, <i>D</i><sub>h</sub> = 1&nbsp;cm).</p></div>
             <ul class="did">
               <li>Referencing the signal to <strong>laser power</strong> cuts noise 13–16% at all averaging times.</li>
               <li><strong>Allan-deviation</strong> analysis confirms the correction removes drift bias in the background signal (random-walk noise unchanged).</li>
@@ -935,7 +959,6 @@ a.tag:hover{border-color:var(--sky)}
             <li>Built a non-resonant, single-axis <strong>acoustic levitator</strong> (Arduino-driven) that traps droplets at standing-wave nodes; simulated node shifts with frequency and phase.</li>
             <li>Built a quadrupole <strong>electrodynamic balance</strong> with a droplet generator; MATLAB modeling of multi-droplet dynamics yielded a DC-bias method that offsets gravity for sharper imaging.</li>
             <li>Modeled electrostatic scavenging of a 10&nbsp;µm carbon particle by a charged 50&nbsp;µm droplet: Coulomb attraction lifted the collection efficiency to 1.69.</li>
-            <li>Proposed a humidity-controlled chamber for studying how levitated pollen grains burst.</li>
           </ul>
           <div class="project__side">
             <div class="skillrow" aria-label="Skills used"><button type="button" data-skill="s-lev">Acoustic levitator</button><button type="button" data-skill="s-edb">Electrodynamic balance</button><button type="button" data-skill="s-arduino">Arduino</button><button type="button" data-skill="s-matlab">MATLAB</button></div>
@@ -1030,13 +1053,12 @@ a.tag:hover{border-color:var(--sky)}
         <div class="group" data-group="code">
           <h3>Programming &amp; hardware</h3>
           <div class="chips">
-            <button class="chip" type="button" data-skill="s-py" aria-pressed="false">Python</button>
-            <button class="chip" type="button" data-skill="s-matlab" aria-pressed="false">MATLAB</button>
             <button class="chip" type="button" data-skill="s-cpp" aria-pressed="false">C++</button>
             <button class="chip" type="button" data-skill="s-labview" aria-pressed="false">LabVIEW</button>
+            <button class="chip" type="button" data-skill="s-py" aria-pressed="false">Python</button>
+            <button class="chip" type="button" data-skill="s-matlab" aria-pressed="false">MATLAB</button>
             <button class="chip" type="button" data-skill="s-arduino" aria-pressed="false">Arduino</button>
             <button class="chip" type="button" data-skill="s-daq" aria-pressed="false">DAQ-based instrument automation</button>
-            <button class="chip" type="button" data-skill="s-latex" aria-pressed="false">LaTeX</button>
           </div>
         </div>
       </div>
@@ -1091,7 +1113,7 @@ a.tag:hover{border-color:var(--sky)}
       <li class="phase">
         <div class="phase__head"><span class="phase__years">2017 – 2021</span><h3>B.Tech., Chemical Engineering</h3><p>Indian Institute of Technology Bombay</p></div>
         <ol class="events">
-          <li><time>Fall 2019</time><p>Teaching assistant, Differential Equations II. Helped design exams and led tutorials for a batch of 100 students.</p></li>
+          <li><time>Fall 2019</time><p>Teaching assistant, Differential Equations II. Helped design exams and led tutorials for a class of 100 students.</p></li>
           <li><time>Apr–Jun 2020</time><p>Undergraduate researcher, Ghent University (Belgium): an algorithm for primary versus non-primary products in reaction networks.</p></li>
           <li><time>Jul–Dec 2020</time><p>Undergraduate researcher, IIT Bombay: a patient-specific ventilator model for COVID-19 patients.</p></li>
         </ol>
@@ -1105,7 +1127,7 @@ a.tag:hover{border-color:var(--sky)}
         </ol>
       </li>
       <li class="phase">
-        <div class="phase__head"><span class="phase__years">2022 – Summer 2027 (expected)</span><h3>Ph.D., Energy, Environmental &amp; Chemical Engineering</h3><p>Washington University in St. Louis · <b>Dean’s Select Ph.D. Fellowship</b>, McKelvey School of Engineering · Advisor: Prof. Rajan K. Chakrabarty</p></div>
+        <div class="phase__head"><span class="phase__years">2022 – August 2027 (expected)</span><h3>Ph.D., Energy, Environmental &amp; Chemical Engineering</h3><p>Washington University in St. Louis · <b>Dean’s Select Ph.D. Fellowship</b>, McKelvey School of Engineering · Advisor: Prof. Rajan K. Chakrabarty</p></div>
         <ol class="events">
           <li class="key"><time>Aug 2022</time><p>Joined the AIR Lab with a Dean’s Select PhD Fellowship.</p></li>
           <li><time>Oct 2023</time><p>Oral talk, AAAR 41st Annual Conference, Portland: photoacoustic resonator geometry.</p></li>
@@ -1116,8 +1138,8 @@ a.tag:hover{border-color:var(--sky)}
           <li><time>Dec 2025</time><p>Oral talk, AGU Fall Meeting, New Orleans: aggregation and the efficiency of SAI aerosol.</p></li>
           <li><time>Apr 2026</time><p>Poster, Simons Foundation SRM Annual Meeting, New York.</p></li>
           <li class="key"><time>2026</time><p>Co-first-author paper on alumina’s shortwave absorption in <i>Geophysical Research Letters</i>.</p></li>
-          <li><time>Oct 2026</time><p>AAAR 44th Annual Conference, Pasadena: Meet the Job Seekers.</p></li>
-          <li class="key"><time>Summer 2027</time><p>PhD expected. Dissertation: <i>Alumina in the upper atmosphere: from proposed stratospheric aerosol injection to emerging satellite re-entry emissions</i>.</p></li>
+          <li><time>Oct 2026</time><p>Poster, AAAR 44th Annual Conference, Pasadena: how satellite re-entry could warm the stratosphere. Also judged poster and oral presentations and took part in Meet the Job Seekers.</p></li>
+          <li class="key"><time>Aug 2027</time><p>PhD expected. Dissertation: <i>Alumina in the upper atmosphere: from proposed stratospheric aerosol injection to emerging satellite re-entry emissions</i>.</p></li>
         </ol>
       </li>
       <li class="phase phase--next">
@@ -1142,7 +1164,7 @@ a.tag:hover{border-color:var(--sky)}
       <div><b>2</b><span>as first or co-first author</span></div>
       <div><b>2</b><span>under review</span></div>
       <div><b>2</b><span>first-author manuscripts in preparation</span></div>
-      <div><b>4</b><span>conference presentations</span></div>
+      <div><b>5</b><span>conference presentations</span></div>
     </div>
 
     <div class="pubgroup">
@@ -1198,6 +1220,10 @@ a.tag:hover{border-color:var(--sky)}
     <div class="pubgroup">
       <h3><span class="badge badge--xs" aria-hidden="true"><img src="data:image/png;base64,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" alt=""></span>Presentations</h3>
       <ol class="pubs">
+        <li class="pub"><span class="pub__id">C5</span><div>
+          <p class="pub__title">Metal rain: How satellite re-entry could warm the stratosphere</p>
+          <p class="pub__auth"><b>Upadhyay, P.</b>, Huang, J., Vattioni, S., Su, W., You, S.-W., Sukhodolov, T., Dykema, J., Sedlacek, J., Seliner, K., Kapoor, T.&nbsp;S., Liang, X., Mishra, R., &amp; Chakrabarty, R.&nbsp;K.</p>
+          <p class="pub__venue">Poster · 44th AAAR Annual Conference, Pasadena, CA · October 2026</p></div></li>
         <li class="pub"><span class="pub__id">C4</span><div>
           <p class="pub__title">Polydisperse monomers improve shortwave radiative efficiency</p>
           <p class="pub__auth"><b>Upadhyay, P.</b>, Kapoor, T.&nbsp;S., &amp; Chakrabarty, R.&nbsp;K.</p>
@@ -1205,7 +1231,7 @@ a.tag:hover{border-color:var(--sky)}
         <li class="pub"><span class="pub__id">C3</span><div>
           <p class="pub__title">Could aggregation and sulfate coating alter the scattering and absorption efficiencies of SAI aerosol?</p>
           <p class="pub__auth"><b>Upadhyay, P.</b>, Kapoor, T.&nbsp;S., &amp; Chakrabarty, R.&nbsp;K.</p>
-          <p class="pub__venue">Oral · AGU Fall Meeting 2025, New Orleans, LA · December 2025</p></div></li>
+          <p class="pub__venue">Oral · AGU Fall Meeting, New Orleans, LA · December 2025</p></div></li>
         <li class="pub"><span class="pub__id">C2</span><div>
           <p class="pub__title">Enhancing the measurement accuracy of integrated photoacoustic nephelometers to better characterize infrared optical properties of stratospheric aerosol injection candidates</p>
           <p class="pub__auth"><b>Upadhyay, P.</b>, Kapoor, T.&nbsp;S., &amp; Chakrabarty, R.&nbsp;K.</p>
@@ -1243,15 +1269,15 @@ a.tag:hover{border-color:var(--sky)}
           <li>Introduction to Data Analysis, Chemical Engineering<small>SPRING 2022</small></li>
           <li>Differential Equations II, Mathematics<small>FALL 2019</small></li>
         </ul>
-        <p>Helped design exams, graded quizzes and finals, and led tutorials for a batch of 100 students.</p>
+        <p>Helped design exams, graded quizzes and finals, and led tutorials for a class of 100 students.</p>
       </div>
       <div class="card">
         <p class="meta">AIR Lab, WashU</p>
         <h3>Lab mentoring</h3>
-        <p>I train junior researchers in experimental aerosol methods and in operating and maintaining the lab’s photoacoustic instruments.</p>
+        <p>I have trained two junior researchers in experimental aerosol methods and in operating and maintaining the lab’s photoacoustic instruments.</p>
       </div>
     </div>
-    <div class="support">
+    <div class="support support--3">
       <div class="card">
         <p class="meta">Fellowship · 2022</p>
         <h3>Dean’s Select PhD Fellowship</h3>
@@ -1261,6 +1287,11 @@ a.tag:hover{border-color:var(--sky)}
         <p class="meta">Research support</p>
         <h3>Simons Foundation International</h3>
         <p>My solar radiation modification research is supported in part by the Simons Foundation International (SFI-MPS-SRM-00005174).</p>
+      </div>
+      <div class="card">
+        <p class="meta">Service · 2026</p>
+        <h3>Presentation judge, AAAR</h3>
+        <p>Judged poster and oral presentations at the 44th AAAR Annual Conference in Pasadena, CA.</p>
       </div>
     </div>
   </div>
@@ -1351,7 +1382,7 @@ a.tag:hover{border-color:var(--sky)}
     <h2 id="contact-title">Hiring a postdoc? Let’s talk.</h2>
     <div class="contact__grid">
       <div>
-        <p>I’m available from Summer 2027 for postdoctoral positions in academia, government and national laboratories.</p>
+        <p>I’m available from August 2027 for postdoctoral positions in academia, government and national laboratories.</p>
         <div class="mailbox">
           <span class="addr" id="addr">prabhav@wustl.edu</span>
           <button class="btn btn--light btn--small" type="button" id="copyBtn">Copy email</button>
@@ -1368,7 +1399,7 @@ a.tag:hover{border-color:var(--sky)}
         <a href="https://air.eece.wustl.edu/people/prabhav-upadhyay/" target="_blank" rel="noopener">AIR Lab profile <span>air.eece.wustl.edu ↗</span></a>
       </nav>
     </div>
-    <div class="foot"><span>© 2026 Prabhav Upadhyay · St. Louis, Missouri</span><span>Updated October 2026</span></div>
+    <div class="foot"><span>© 2026 Prabhav Upadhyay · St. Louis, Missouri</span><span>Updated November 2026</span></div>
   </div>
 </section>
 
@@ -1384,9 +1415,9 @@ a.tag:hover{border-color:var(--sky)}
     </div>
     <p class="cvdlg__note" id="cvNote" hidden>This view blocked the download, so the CV is shown here instead.</p>
     <div class="cvdlg__pages">
-      <img data-src="img/cv_p1.webp" width="1445" height="1870" alt="CV page 1 of 3: contact details, research interests, education (PhD at Washington University in St. Louis, expected Summer 2027; joint master's at WashU and IIT Bombay; B.Tech. at IIT Bombay) and publications: three journal articles, two submitted manuscripts and two manuscripts in preparation." loading="lazy">
-      <img data-src="img/cv_p2.webp" width="1445" height="1870" alt="CV page 2 of 3: four conference presentations and graduate research experience in the AIR Lab at WashU, covering instrumentation, aerosol optics for stratospheric aerosol injection, satellite re-entry and collaborations." loading="lazy">
-      <img data-src="img/cv_p3.webp" width="1445" height="1870" alt="CV page 3 of 3: master's thesis research, undergraduate research at IIT Bombay and Ghent University, the Dean's Select PhD Fellowship, teaching experience and technical skills." loading="lazy">
+      <img data-src="img/cv_p1.webp" width="1445" height="1870" alt="CV page 1 of 3: contact details, research interests, education (PhD at Washington University in St. Louis, expected August 2027; M.Tech. at IIT Bombay and M.S. at WashU; B.Tech. at IIT Bombay) and graduate research experience in the AIR Lab at WashU, covering instrumentation, aerosol optics for stratospheric aerosol injection and satellite re-entry." loading="lazy">
+      <img data-src="img/cv_p2.webp" width="1445" height="1870" alt="CV page 2 of 3: the rest of the satellite re-entry work and collaborations, master's thesis research, undergraduate research at IIT Bombay and Ghent University, and publications: three journal articles, two submitted manuscripts and the first of two manuscripts in preparation." loading="lazy">
+      <img data-src="img/cv_p3.webp" width="1445" height="1870" alt="CV page 3 of 3: the second manuscript in preparation, five conference presentations, teaching experience, service and technical skills." loading="lazy">
     </div>
   </div>
 </dialog>
@@ -1794,6 +1825,15 @@ a.tag:hover{border-color:var(--sky)}
       });
     });
     bar.hidden = false; box.classList.add("is-tabbed"); selectTab(0, false);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-tab-target]"), function (b) {
+    b.addEventListener("click", function () {
+      var t = document.getElementById(b.getAttribute("data-tab-target")); if (!t) return;
+      t.click();
+      var box = t.closest("[data-tabs]") || t;
+      var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      box.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "start" });
+    });
   });
 
   /* ---------- method dialogs: any [data-dialog] button opens its condensed method ---------- */
